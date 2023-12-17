@@ -57,18 +57,16 @@ public class ConsoleScanner {
         }
     }
 
-    //task4 ????????????????
-    public static void different(String string) {
-        String newWord = "";
-//
-//        String[] word = string.split(" ");
+    //task4
+    public boolean different(String string) {
         for (int i = 0; i < string.length(); i++) {
-           if(!string.substring(i).equals(string.substring((i + 1)))) {
-               newWord += string.substring(i) + string.substring((i + 1));
-           }
+            for (int j = i + 1; j < string.length(); j++) {
+                if (string.charAt(i) == string.charAt(j)) {
+                    return false;
+                }
+            }
         }
-
-        System.out.println(newWord);
+        return true;
     }
 
     //task5
